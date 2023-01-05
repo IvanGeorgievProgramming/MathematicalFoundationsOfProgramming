@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 void printMenu();
 void initializeField();
@@ -12,7 +14,7 @@ int main(){
     
     while(true){
         printMenu();
-        scanf("%d", &option);
+        cin >> option;
         
         switch(option){
             case 1:
@@ -34,7 +36,7 @@ int main(){
                 return 0;
                 break;
             default:
-                printf("Invalid option\n");
+                cout << "Invalid option" << endl;
                 break;
         }
     }
@@ -43,31 +45,31 @@ int main(){
 }
 
 void printMenu(){
-    printf("Choose an option:\n");
-    printf("1. Initialize the field data\n");
-    printf("2. Change the field data\n");
-    printf("3. Print the field data\n");
-    printf("4. Hit the ball\n");
-    printf("5. List of commands\n");
-    printf("6. Exit\n");
+    cout << "Choose an option:" << endl;
+    cout << "1. Initialize the field data" << endl;
+    cout << "2. Change the field data" << endl;
+    cout << "3. Print the field data" << endl;
+    cout << "4. Hit the ball" << endl;
+    cout << "5. List of commands" << endl;
+    cout << "6. Exit" << endl;
 }
 
 void initializeField(){
-    printf("Initializing the field data\n");
+    cout << "Initializing the field data" << endl;
 }
 
 void changeField(){
-    printf("Changing the field data\n");
+    cout << "Changing the field data" << endl;
 }
 
 void printField(){
-    printf("Printing the field data\n");
+    cout << "Printing the field data" << endl;
 }
 
 void hitBall(){
-    printf("Hitting the ball\n");
+    cout << "Hitting the ball" << endl;
 }
 
 void listCommands(){
-    printf("Listing the commands\n");
+    cout << "Listing the commands" << endl;
 }
