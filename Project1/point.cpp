@@ -1,6 +1,7 @@
 #include "point.h";
 
-// Constructors
+// * Constructors
+
 Point::Point() {
     x = 0;
     y = 0;
@@ -24,7 +25,8 @@ Point& Point::operator=(const Point& other) {
     return *this;
 }
 
-// Getters
+// * Getters
+
 int Point::getX() {
     return x;
 }
@@ -33,7 +35,8 @@ int Point::getY() {
     return y;
 }
 
-// Setters
+// * Setters
+
 void Point::setX(int x) {
     this->x = x;
 }

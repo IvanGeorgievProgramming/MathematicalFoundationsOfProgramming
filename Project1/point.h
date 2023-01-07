@@ -6,25 +6,25 @@
 
 class Point{
 private:
-    // Variables
+    // * Variables
     int x, y;
 	
 public:
-    // Constructors
+    // * Constructors
 	Point();
     Point(int x, int y);
     Point(const Point& other);
     Point &operator=(const Point& other);
 
-    // Getters
+    // * Getters
     int getX();
     int getY();
 
-    // Setters
+    // * Setters
     void setX(int x);
     void setY(int y);
 
-    // Friends
+    // * Friends
     friend class Line;
 };
 

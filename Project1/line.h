@@ -4,13 +4,29 @@
 #include "vector.h"
 
 class Line {
+private:
+    // * Variables
     int A, B, C;
 
 public:
-    Line(int A = 0, int B = 0, int C = 0) : A(A), B(B), C(C) {}
+    // * Constructors
+    Line();
     Line(const Point p, const Vector& v);
     Line(const Point p1, const Point p2);
+    Line(const Line& other);
+    Line operator=(const Line& other);
 
+    // * Getters
+    int getA() const;
+    int getB() const;
+    int getC() const;
+
+    // * Setters
+    void setA(int A);
+    void setB(int B);
+    void setC(int C);
+
+    // * Methods
 	bool are_parallel(const Line& other) const;
     bool is_orthogonal(const Line& other) const;
 
@@ -19,23 +35,6 @@ public:
 
     Line parallel(const Point p) const;
     Line orthogonal(const Point p) const;
-
-    friend std::ostream& operator<<(std::ostream& out, const Line& l);
-    friend std::istream& operator>>(std::istream& in, Line& l);
 };
-
-inline std::ostream& operator<<(std::ostream& out, const Line& l)
-{
-    out << l.A << "x + "<< l.B << "y + "<< l.C << " = 0 ";
-    return out;
-}
-
-inline std::istream& operator>>(std::istream& in, Line& l)
-{
-    in >> l.A;
-    in >> l.B;
-    in >> l.C;
-    return in;
-}
 
 #endif
