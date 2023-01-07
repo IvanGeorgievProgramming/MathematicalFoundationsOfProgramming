@@ -3,13 +3,24 @@
 #include "point.h"
 
 class Vector {
+private:
     int x, y;
 
 public:
-    Vector() : x(0), y(0) {}
-    Vector(int x, int y) : x(x), y(y) {}
-    Vector(const Point p1, const Point p2);
+    // * Constructors
+    Vector();
+    Vector(int x, int y);
+    Vector(Point p1, Point p2);
 
+    // * Getters
+    int getX() const;
+    int getY() const;
+
+    // * Setters
+    void setX(int x);
+    void setY(int y);
+
+    // * Methods
     Vector sum(const Vector& other) const;
     Vector times_num(int num) const;
 
@@ -17,24 +28,11 @@ public:
     double length() const;
     int dot_product(const Vector& other) const;
 
+    // * Friends
     friend class Line;
-    friend std::ostream& operator<<(std::ostream& os, const Vector& c);
-    friend std::istream& operator>>(std::istream& in, Vector& v);
+    friend class Point;
 };
 
 int area(const Vector v1, const Vector v2);
-
-inline std::ostream& operator<<(std::ostream& out, const Vector& v) 
-{
-    out << "(" << v.x << ", " << v.y << ")";
-    return out;
-}
-
-inline std::istream& operator>>(std::istream& in, Vector& v) 
-{
-    in >> v.x;
-    in >> v.y;
-	return in;
-}
 
 #endif
