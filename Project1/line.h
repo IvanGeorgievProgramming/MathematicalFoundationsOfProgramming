@@ -6,7 +6,7 @@
 class Line {
 private:
     // * Variables
-    int A, B, C;
+    double A, B, C;
 
 public:
     // * Constructors
@@ -17,14 +17,14 @@ public:
     Line operator=(const Line& other);
 
     // * Getters
-    int getA() const;
-    int getB() const;
-    int getC() const;
+    double getA() const;
+    double getB() const;
+    double getC() const;
 
     // * Setters
-    void setA(int A);
-    void setB(int B);
-    void setC(int C);
+    void setA(double A);
+    void setB(double B);
+    void setC(double C);
 
     // * Methods
 	bool are_parallel(const Line& other) const;

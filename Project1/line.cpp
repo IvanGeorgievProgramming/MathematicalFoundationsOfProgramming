@@ -11,13 +11,13 @@ Line::Line() {
 Line::Line(const Point p, const Vector& v) {
     A = v.y;
     B = -v.x;
-    C = -A * p.x - B * p.y;
+    C = -A * p.pX - B * p.pY;
 }
 
 Line::Line(const Point p1, const Point p2) {
-    A = p2.y - p1.y;
-    B = p1.x - p2.x;
-    C = -A * p1.x - B * p1.y;
+    A = p2.pY - p1.pY;
+    B = p1.pX - p2.pX;
+    C = -A * p1.pX - B * p1.pY;
 }
 
 Line::Line(const Line& other) {
@@ -37,29 +37,29 @@ Line Line::operator=(const Line& other) {
 
 // * Getters
 
-int Line::getA() const {
+double Line::getA() const {
     return A;
 }
 
-int Line::getB() const {
+double Line::getB() const {
     return B;
 }
 
-int Line::getC() const {
+double Line::getC() const {
     return C;
 }
 
 // * Setters
 
-void Line::setA(int A) {
+void Line::setA(double A) {
     this->A = A;
 }
 
-void Line::setB(int B) {
+void Line::setB(double B) {
     this->B = B;
 }
 
-void Line::setC(int C) {
+void Line::setC(double C) {
     this->C = C;
 }
 

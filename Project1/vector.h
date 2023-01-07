@@ -4,21 +4,21 @@
 
 class Vector {
 private:
-    int x, y;
+    double x, y;
 
 public:
     // * Constructors
     Vector();
-    Vector(int x, int y);
-    Vector(Point p1, Point p2);
+    Vector(double x, double y);
+    Vector(const Point p1, const Point p2);
 
     // * Getters
-    int getX() const;
-    int getY() const;
+    double getX() const;
+    double getY() const;
 
     // * Setters
-    void setX(int x);
-    void setY(int y);
+    void setX(double x);
+    void setY(double y);
 
     // * Methods
     Vector sum(const Vector& other) const;

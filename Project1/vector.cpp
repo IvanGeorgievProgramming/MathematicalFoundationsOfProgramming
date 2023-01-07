@@ -7,33 +7,33 @@ Vector::Vector() {
     y = 0;
 }
 
-Vector::Vector(int x, int y) {
+Vector::Vector(double x, double y) {
     this->x = x;
     this->y = y;
 }
 
-Vector::Vector(Point p1, Point p2) {
-    // !    x = p2.x - p1.x;
-    // !    y = p2.y - p1.y;
+Vector::Vector(const Point p1, const Point p2) {
+    // ! x = p2.pX - p1.pX;
+    // ! y = p2.pY - p1.pY;
 }
 
 // * Getters
 
-int Vector::getX() const {
+double Vector::getX() const {
     return x;
 }
 
-int Vector::getY() const {
+double Vector::getY() const {
     return y;
 }
 
 // * Setters
 
-void Vector::setX(int x) {
+void Vector::setX(double x) {
     this->x = x;
 }
 
-void Vector::setY(int y) {
+void Vector::setY(double y) {
     this->y = y;
 }
 

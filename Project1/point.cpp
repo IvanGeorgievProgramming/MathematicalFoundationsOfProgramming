@@ -3,44 +3,44 @@
 // * Constructors
 
 Point::Point() {
-    x = 0;
-    y = 0;
+    pX = 0;
+    pY = 0;
 }
 
-Point::Point(int x, int y) {
-    this->x = x;
-    this->y = y;
+Point::Point(double pX, double pY) {
+    this->pX = pX;
+    this->pY = pY;
 }
 
 Point::Point(const Point& other) {
-    x = other.x;
-    y = other.y;
+    pX = other.pX;
+    pY = other.pY;
 }
 
 Point& Point::operator=(const Point& other) {
     if (this != &other) {
-        x = other.x;
-        y = other.y;
+        pX = other.pX;
+        pY = other.pY;
     }
     return *this;
 }
 
 // * Getters
 
-int Point::getX() {
-    return x;
+double Point::getpX() const{
+    return pX;
 }
 
-int Point::getY() {
-    return y;
+double Point::getpY() const{
+    return pY;
 }
 
 // * Setters
 
-void Point::setX(int x) {
-    this->x = x;
+void Point::setpX(double pX) {
+    this->pX = pX;
 }
 
-void Point::setY(int y) {
-    this->y = y;
+void Point::setpY(double pY) {
+    this->pY = pY;
 }
