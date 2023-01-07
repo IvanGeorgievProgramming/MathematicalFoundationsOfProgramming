@@ -4,26 +4,28 @@
 #include <fstream>
 #include <cmath>
 
-struct Point
-{
+class Point{
+private:
+    // Variables
     int x, y;
 	
-	Point() : x(0), y(0) {}
-    Point(int x, int y) : x(x), y(y) {}
+public:
+    // Constructors
+	Point();
+    Point(int x, int y);
+    Point(const Point& other);
+    Point &operator=(const Point& other);
+
+    // Getters
+    int getX();
+    int getY();
+
+    // Setters
+    void setX(int x);
+    void setY(int y);
+
+    // Friends
+    friend class Line;
 };
-
-// this is for inputing a point
-inline std::istream& operator>>(std::istream& in, Point& p) {
-    in >> p.x;
-    in >> p.y;
-	
-    return in;
-}
-
-// this is for printing a point
-inline std::ostream& operator<<(std::ostream& out, Point& p) {
-    out << "(" << p.x << ", " << p.y << ")";
-    return out;
-}
 
 #endif
