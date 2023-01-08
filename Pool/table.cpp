@@ -26,6 +26,24 @@ Table::Table(){
     this->border[1] = line2;
     this->border[2] = line3;
     this->border[3] = line4;
+
+    Point ballEdge1 = Point(edge1.getpX() + ball.getRadius(), edge1.getpY() + ball.getRadius());
+    Point ballEdge2 = Point(edge2.getpX() - ball.getRadius(), edge2.getpY() + ball.getRadius());
+    Point ballEdge3 = Point(edge3.getpX() - ball.getRadius(), edge3.getpY() - ball.getRadius());
+    Point ballEdge4 = Point(edge4.getpX() + ball.getRadius(), edge4.getpY() - ball.getRadius());
+    this->ballEdge[0] = ballEdge1;
+    this->ballEdge[1] = ballEdge2;
+    this->ballEdge[2] = ballEdge3;
+    this->ballEdge[3] = ballEdge4;
+
+    Line ballLine1 = Line(ballEdge1, ballEdge2);
+    Line ballLine2 = Line(ballEdge2, ballEdge3);
+    Line ballLine3 = Line(ballEdge3, ballEdge4);
+    Line ballLine4 = Line(ballEdge4, ballEdge1);
+    this->ballBorder[0] = ballLine1;
+    this->ballBorder[1] = ballLine2;
+    this->ballBorder[2] = ballLine3;
+    this->ballBorder[3] = ballLine4;
 }
 
 Table::Table(Point& startingPosition,  Ball& ball,  Point edge[4]){
@@ -47,6 +65,24 @@ Table::Table(Point& startingPosition,  Ball& ball,  Point edge[4]){
     this->border[2] = line3;
     this->border[3] = line4;
 
+    Point ballEdge1 = Point(edge[0].getpX() + ball.getRadius(), edge[0].getpY() + ball.getRadius());
+    Point ballEdge2 = Point(edge[1].getpX() - ball.getRadius(), edge[1].getpY() + ball.getRadius());
+    Point ballEdge3 = Point(edge[2].getpX() - ball.getRadius(), edge[2].getpY() - ball.getRadius());
+    Point ballEdge4 = Point(edge[3].getpX() + ball.getRadius(), edge[3].getpY() - ball.getRadius());
+    this->ballEdge[0] = ballEdge1;
+    this->ballEdge[1] = ballEdge2;
+    this->ballEdge[2] = ballEdge3;
+    this->ballEdge[3] = ballEdge4;
+
+    Line ballLine1 = Line(ballEdge1, ballEdge2);
+    Line ballLine2 = Line(ballEdge2, ballEdge3);
+    Line ballLine3 = Line(ballEdge3, ballEdge4);
+    Line ballLine4 = Line(ballEdge4, ballEdge1);
+    this->ballBorder[0] = ballLine1;
+    this->ballBorder[1] = ballLine2;
+    this->ballBorder[2] = ballLine3;
+    this->ballBorder[3] = ballLine4;
+
     // TODO: Check if the edges are 1:2
     // TODO: Check if the ball is inside the edges
 }
@@ -59,6 +95,8 @@ Table::Table(Table& other){
     for (int i = 0; i < 4; i++) {
         this->edge[i] = other.edge[i];
         this->border[i] = other.border[i];
+        this->ballEdge[i] = other.ballEdge[i];
+        this->ballBorder[i] = other.ballBorder[i];
     }
 }
 
@@ -71,6 +109,8 @@ Table &Table::operator=(Table& other){
         for (int i = 0; i < 4; i++) {
             this->edge[i] = other.edge[i];
             this->border[i] = other.border[i];
+            this->ballEdge[i] = other.ballEdge[i];
+            this->ballBorder[i] = other.ballBorder[i];
         }
     }
 
@@ -95,6 +135,14 @@ Line Table::getBorder(int index) {
     return this->border[index];
 }
 
+Point Table::getBallEdge(int index) {
+    return this->ballEdge[index];
+}
+
+Line Table::getBallBorder(int index) {
+    return this->ballBorder[index];
+}
+
 // * Setters
 
 void Table::setStartingPosition(Point& startingPosition){
@@ -111,6 +159,14 @@ void Table::setEdge(int index, Point& edge){
 
 void Table::setBorder(int index, Line& border){
     this->border[index] = border;
+}
+
+void Table::setBallEdge(int index, Point& ballEdge){
+    this->ballEdge[index] = ballEdge;
+}
+
+void Table::setBallBorder(int index, Line& ballBorder){
+    this->ballBorder[index] = ballBorder;
 }
 
 // * Methods
