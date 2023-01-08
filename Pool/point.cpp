@@ -71,3 +71,29 @@ void Point::printPoint(){
     // Printing the point
     cout << "(" << this->pX << ", " << this->pY << ")" << endl;
 }
+
+// Method for checking if the point is inside a rectangle
+// The rectangale can be recersed
+bool Point::inRectangle(Point p1, Point p2, Point p3, Point p4){
+    // Checking if the point is inside the rectangle
+    if(this->pX >= p1.pX && this->pX <= p2.pX && this->pY >= p1.pY && this->pY <= p3.pY){
+        // Returning true
+        return true;
+    }
+    else if(this->pX >= p2.pX && this->pX <= p1.pX && this->pY >= p2.pY && this->pY <= p4.pY){
+        // Returning true
+        return true;
+    }
+    else if(this->pX >= p3.pX && this->pX <= p4.pX && this->pY >= p3.pY && this->pY <= p1.pY){
+        // Returning true
+        return true;
+    }
+    else if(this->pX >= p4.pX && this->pX <= p3.pX && this->pY >= p4.pY && this->pY <= p2.pY){
+        // Returning true
+        return true;
+    }
+    else{
+        // Returning false
+        return false;
+    }
+}

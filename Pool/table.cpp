@@ -68,8 +68,10 @@ Table::Table(){
     if(this->border[0].areParallel(this->border[2]) == false || this->border[1].areParallel(this->border[3]) == false){
         throw 3;
     }
-    // TODO: Check if the ball is inside the edges
-    
+    // Checking if the ball is inside the edges
+    if(!this->ball.inRectangle(this->ballEdge[0], this->ballEdge[1], this->ballEdge[2], this->ballEdge[3])){
+        throw 4;
+    }
 }
 
 // Constructor with parameters
@@ -133,7 +135,10 @@ Table::Table(Point& startingPosition,  Ball& ball,  Point edge[4]){
     if(this->border[0].areParallel(this->border[2]) == false || this->border[1].areParallel(this->border[3]) == false){
         throw 3;
     }
-    // TODO: Check if the ball is inside the edges
+    // Checking if the ball is inside the edges
+    if(!this->ball.inRectangle(this->ballEdge[0], this->ballEdge[1], this->ballEdge[2], this->ballEdge[3])){
+        throw 4;
+    }
 }
 
 // Copy constructor

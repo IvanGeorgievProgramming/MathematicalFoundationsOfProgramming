@@ -13,8 +13,9 @@ void listCommands();
 
 int main(){
     try{
-        Point startingPosition(3110, 70);
-        Ball ball(280, 70, 0);
+        Point startingPosition(280, 70);
+        double radius = 0;
+        Ball ball(startingPosition.getpX(), startingPosition.getpY(), radius);
         Point edges[4] = {Point(0, 0), Point(320, 0), Point(320, 160), Point(0, 160)};
     
         Table table(startingPosition, ball, edges);
