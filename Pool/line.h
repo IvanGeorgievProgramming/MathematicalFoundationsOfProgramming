@@ -35,14 +35,16 @@ public:
     // * Methods
     void printLine();
 
-    bool are_parallel(Line& other);
-    bool is_orthogonal(Line& other);
+    bool areParallel(Line& other);
+    bool isOrthogonal(Line& other);
 
 	Vector colinear();
     Vector orthogonal();
 
     Line parallel(Point p);
     Line orthogonal(Point p);
+
+    double getLength();
 
     // * Friends
     friend class Point;
