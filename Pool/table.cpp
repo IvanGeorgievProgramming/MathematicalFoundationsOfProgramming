@@ -279,7 +279,7 @@ void Table::printTable() {
     }
 }
 
-// Method for moving the ball without checking if it is inside the table
+// Method for moving the ball
 void Table::moveBall(Point direction, double power){
     // Make a vector from the direction
     Vector vector = Vector(direction.getpX(), direction.getpY(), power);
@@ -287,4 +287,17 @@ void Table::moveBall(Point direction, double power){
     // Move the ball
     ball.setpX(vector.getvX());
     ball.setpY(vector.getvY());
+}
+
+// Method for hitting the ball
+void Table::hitBall(Point position, Point direction, double power){
+    moveBall(direction, power);
+
+    if(ball.inRectangle(ballEdge[0], ballEdge[1], ballEdge[2], ballEdge[3])){
+        printTable();
+    }
+    else{
+        // Checking if the ball hit the edge
+        // Checking if the ball hit the border
+    }
 }
