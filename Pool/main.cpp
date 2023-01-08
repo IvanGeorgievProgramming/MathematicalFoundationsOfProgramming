@@ -21,6 +21,11 @@ int main(){
         Table table(startingPosition, ball, edges);
 
         table.printTable();
+
+        double power = 2;
+        table.moveBall(Point(230, 50), power);
+
+        table.printTable();
     
         /*
         int option;

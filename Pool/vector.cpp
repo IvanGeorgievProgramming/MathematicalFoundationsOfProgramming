@@ -16,6 +16,13 @@ Vector::Vector(double vX, double vY){
     this->vY = vY;
 }
 
+// Constructor with parameters (vX, vY, power)
+Vector::Vector(double vX, double vY, double power){
+    // Giving values to the vector
+    this->vX = vX * power;
+    this->vY = vY * power;
+}
+
 // Constructor with parameters (2 points)
 Vector::Vector(Point p1, Point p2){
     // Giving values to the vector
@@ -89,7 +96,7 @@ Vector Vector::sum(Vector& other){
 }
 
 // Method for multiplying a vector by a number
-Vector Vector::times_num(int num){
+Vector Vector::times_num(double num){
     Vector result;
 
     result.vX = this->vX * num;

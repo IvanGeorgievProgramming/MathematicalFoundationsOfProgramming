@@ -17,6 +17,7 @@ public:
     // * Constructors
     Vector();
     Vector(double vX, double vY);
+    Vector(double vX, double vY, double power);
     Vector(Point p1, Point p2);
     Vector(Vector& other);
     Vector &operator=(Vector& other);
@@ -33,7 +34,7 @@ public:
     void printVector();
 
     Vector sum(Vector& other);
-    Vector times_num(int num);
+    Vector times_num(double num);
 
     bool is_colinear(Vector& other);
     double length();

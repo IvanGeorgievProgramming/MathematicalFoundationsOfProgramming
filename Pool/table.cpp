@@ -278,3 +278,13 @@ void Table::printTable() {
         this->border[i].printLine();
     }
 }
+
+// Method for moving the ball without checking if it is inside the table
+void Table::moveBall(Point direction, double power){
+    // Make a vector from the direction
+    Vector vector = Vector(direction.getpX(), direction.getpY(), power);
+
+    // Move the ball
+    ball.setpX(vector.getvX());
+    ball.setpY(vector.getvY());
+}

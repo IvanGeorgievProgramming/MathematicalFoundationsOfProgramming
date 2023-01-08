@@ -47,6 +47,7 @@ public:
     
     // * Methods
     void printTable();
+    void moveBall(Point direction, double power);
 
     // * Friends
     friend class Point;
