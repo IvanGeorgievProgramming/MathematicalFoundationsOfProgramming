@@ -15,6 +15,7 @@ private:
     // * Variables
     Point startingPosition;
     Ball ball;
+    
     Point edge[4];
     Line border[4];
 

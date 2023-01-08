@@ -3,16 +3,16 @@
 // * Constructors
 
 Table::Table(){
-    Point point = Point(0, 0);
+    Point point = Point(280, 70);
     this->startingPosition = point;
 
-    Ball ball = Ball(0, 0, 0);
+    Ball ball = Ball(280, 70, 0);
     this->ball = ball;
 
     Point edge1 = Point(0, 0);
-    Point edge2 = Point(0, 0);
-    Point edge3 = Point(0, 0);
-    Point edge4 = Point(0, 0);
+    Point edge2 = Point(320, 0);
+    Point edge3 = Point(320, 160);
+    Point edge4 = Point(0, 160);
     this->edge[0] = edge1;
     this->edge[1] = edge2;
     this->edge[2] = edge3;
@@ -46,6 +46,9 @@ Table::Table(Point& startingPosition,  Ball& ball,  Point edge[4]){
     this->border[1] = line2;
     this->border[2] = line3;
     this->border[3] = line4;
+
+    // TODO: Check if the edges are 1:2
+    // TODO: Check if the ball is inside the edges
 }
 
 Table::Table(Table& other){
@@ -123,7 +126,7 @@ void Table::printTable() {
     for (int i = 0; i < 4; i++) {
         this->edge[i].printPoint();
     }
-    
+
     cout << endl << "Borders: " << endl;
     for (int i = 0; i < 4; i++) {
         this->border[i].printLine();

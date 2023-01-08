@@ -12,47 +12,51 @@ void hitBall();
 void listCommands();
 
 int main(){
-    Point startingPosition(280, 70);
-    Ball ball(280, 70, 0);
-    Point edges[4] = {Point(0, 0), Point(320, 0), Point(320, 160), Point(0, 160)};
+    try{
+        Point startingPosition(280, 70);
+        Ball ball(280, 70, 0);
+        Point edges[4] = {Point(0, 0), Point(320, 0), Point(320, 160), Point(0, 160)};
     
-    Table table(startingPosition, ball, edges);
+        Table table(startingPosition, ball, edges);
 
-    table.printTable();
+        table.printTable();
     
-    /*
-    int option;
+        /*
+        int option;
     
-    while(true){
-        printMenu();
-        cin >> option;
+        while(true){
+            printMenu();
+            cin >> option;
         
-        switch(option){
-            case 1:
-                initializeField();
-                break;
-            case 2:
-                changeField();
-                break;
-            case 3:
-                printField();
-                break;
-            case 4:
-                hitBall();
-                break;
-            case 5:
-                listCommands();
-                break;
-            case 6:
-                return 0;
-                break;
-            default:
-                cout << "Invalid option" << endl;
-                break;
+            switch(option){
+                case 1:
+                    initializeField();
+                    break;
+                case 2:
+                    changeField();
+                    break;
+                case 3:
+                    printField();
+                    break;
+                case 4:
+                    hitBall();
+                    break;
+                case 5:
+                    listCommands();
+                    break;
+                case 6:
+                    return 0;
+                    break;
+                default:
+                    cout << "Invalid option" << endl;
+                    break;
+            }
         }
+        */
     }
-    */
-
+    catch(exception& e){
+        cout << e.what() << endl;
+    }
     return 0;
 }
 
